@@ -2,11 +2,9 @@ import { useState } from "react"
 import axios from 'axios'
 import {useNavigate} from "react-router-dom"
 
-export const CreateAdmin = () => {
-  
+export const CreateState = () => {
   const [values, setValue] = useState({
-    User_Name: "",
-    Password: ""
+    state_name: ""
   })
 
   function handleChange(event) {
@@ -17,33 +15,24 @@ export const CreateAdmin = () => {
   } 
 
   const navigate = useNavigate()
-  
+
   function handleSubmit(event) {
     event.preventDefault()
-    axios.post('http://localhost:3030/create', values)
-    .then(res => navigate('/'))
-    .catch(err => console.error("Error creating state:", err))
+    axios.post('http://localhost:3030/createState', values)
+    .then(res => navigate('/state'))
+    .catch(err => console.log(err))
   }
-
-  // console.log(value.User_Name, value.Password)
   
   return (
     <div className="form-container">
-      <h2>Create admin</h2>
+      <h2>Create state</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="adminName">Admin name</label>
+        <label htmlFor="stateName">State name</label>
         <input
          type="text" 
-         id="adminName"
+         id="stateName"
          onChange={handleChange}
-         name="User_Name"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-         type="password"
-         id="password"
-         name="Password"
-         onChange={handleChange}
+         name="state_name"
         />
         <button className="submit-btn">submit</button>
       </form>
