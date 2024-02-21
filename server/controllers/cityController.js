@@ -65,3 +65,14 @@ exports.getCitiesRecord = (req, res) => {
     }
   });
 } 
+
+exports.getCities = (req, res) => {
+  const sql = "SELECT * FROM city_table";
+  db.query(sql, (err, data) => {
+    if (err) {
+      console.error(err); 
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    return res.json(data);
+  });
+}

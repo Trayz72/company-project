@@ -1,21 +1,20 @@
-import {useState, useEffect} from "react"
-import { Link } from "react-router-dom"
-import axios from "axios"
+import {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios';
 
+export const Area = () => {
+  const [data, setData] = useState([]);
 
-export function City() {
-  const [data, setData] = useState([])
-  
   useEffect(()=> {
     axios
-      .get("http://localhost:3030/getAllCities")
+      .get("http://localhost:3030/getAllAreas")
       .then(res => setData(res.data))
       .catch(error => console.log(error))
   }, [])
 
   function handleDelete(id) {
     axios
-      .delete("http://localhost:3030/deleteCity/" + id)
+      .delete("http://localhost:3030/deleteArea/" + id)
       .then(res => window.location.reload())
       .catch(err => console.log(err))
   }
@@ -23,28 +22,28 @@ export function City() {
   return (
     <>
       <div className="table-container">
-        <Link to="/CreateCity" className="link">
+        <Link to="/CreateArea" className="link">
           Create
         </Link>
       {data.length !== 0 ? (
           <table className="table">
             <thead>
               <tr>
-                <th>Id</th>
+                <th>Pincode</th>
+                <th>AreaName</th>
                 <th>CityName</th>
-                <th>StateName</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               {data.map((item, index) => (
                 <tr key={index} className={index % 2 === 0 ? "even-row" : "odd-row"}>
-                  <td>{item.City_Id}</td>
+                  <td>{item.Pincode}</td>
+                  <td>{item.Area_Name}</td>
                   <td>{item.City_Name}</td>
-                  <td>{item.state_name}</td>
                   <td className="action-buttons">
-                    <Link className="link" to={`/CityUpdate/${item.City_Id}`}>update</Link>
-                    <button className="delete-btn" onClick={() => handleDelete(item.City_Id)}>
+                    <Link className="link" to={`/AreaUpdate/${item.Pincode}`}>update</Link>
+                    <button className="delete-btn" onClick={() => handleDelete(item.Pincode)}>
                       delete
                     </button>
                   </td>

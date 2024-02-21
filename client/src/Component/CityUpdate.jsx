@@ -43,7 +43,7 @@ export const CityUpdate = () => {
   }
   return (
     <div className="form-container">
-      <h2>Create city</h2>
+      <h2>update city</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="cityName">City name</label>
         <input
