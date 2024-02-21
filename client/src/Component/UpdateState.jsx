@@ -46,6 +46,7 @@ export const UpdateState = () => {
          id="stateName"
          onChange={handleChange}
          name="state_name"
+         value={values.state_name}
         />
         <button className="submit-btn">submit</button>
       </form>
