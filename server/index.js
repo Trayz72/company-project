@@ -5,6 +5,7 @@ const stateController = require('./controllers/stateController');
 const cityController = require('./controllers/cityController');
 const areaController = require('./controllers/areaController');
 const pTypeController = require('./controllers/pTypeController');
+const pCategoryController = require('./controllers/pCategoryController')
 
 const app = express();
 app.use(express.json());
@@ -46,6 +47,13 @@ app.get('/getAllProductType', pTypeController.getAllProductType);
 app.delete('/deleteProductType/:id', pTypeController.deleteProductType);
 app.put('/updateProductType/:id', pTypeController.updateProductType);
 app.get('/getProductTypeRecord/:id', pTypeController.getProductTypeRecord);
+
+//product-category route
+app.post('/createProductCategory', pCategoryController.createProductCategory)
+app.get('/getAllProductCategory', pCategoryController.getAllProductCategory);
+app.delete('/deleteProductCategory/:id',pCategoryController.deleteProductCategory);
+app.put('/updateProductCategory/:id', pCategoryController.updateProductCategory);
+app.get('/getProductCategoryRecord/:id', pCategoryController.getProductCategoryRecord);
 
 app.listen(3030, () => {
   console.log("Running");

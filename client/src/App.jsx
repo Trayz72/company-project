@@ -14,6 +14,9 @@ import { AreaUpdate } from "./Component/AreaUpdate"
 import { CreateProductType } from "./Component/CreateProductType"
 import { ProductType } from "./Component/ProductType"
 import { ProductTypeUpdate } from "./Component/ProductTypeUpdate"
+import { CreateProductCategory } from "./Component/CreateProductCategory"
+import { ProductCategory } from "./Component/ProductCategory"
+import { ProductCategoryUpdate } from "./Component/ProductCategoryUpdate"
 
 function App() {
 
@@ -40,6 +43,10 @@ function App() {
           <Route path="/createProductType" element={<CreateProductType/>}></Route>
           <Route path="/productType" element={<ProductType/>}></Route>
           <Route path="/productTypeUpdate/:id" element={<ProductTypeUpdate/>}></Route>
+
+          <Route path="/createProductCategory" element={<CreateProductCategory/>}></Route>
+          <Route path="/productCategory" element={<ProductCategory/>}></Route>
+          <Route path="/productCategoryUpdate/:id" element={<ProductCategoryUpdate/>}></Route>
         </Routes>
       </BrowserRouter>
     </>
