@@ -34,32 +34,32 @@ export const CreateArea = () => {
 
   return (
     <div className="form-container">
-    <h2>Create Area</h2>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="pinCode">Pin Code</label>
-      <input 
-        type="number"
-        id="pinCode"
-        onChange={handleChange} 
-        name="Pincode"
-        maxLength={6}
+      <h2>Create Area</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="pinCode">Pin Code</label>
+        <input 
+          type="number"
+          id="pinCode"
+          onChange={handleChange} 
+          name="Pincode"
+          maxLength={6}
+          required
+        />
+        <label htmlFor="areaName">Area Name</label>
+        <input
+        type="text" 
+        id="areaName"
+        onChange={handleChange}
+        name="Area_Name"
         required
-      />
-      <label htmlFor="areaName">Area Name</label>
-      <input
-       type="text" 
-       id="areaName"
-       onChange={handleChange}
-       name="Area_Name"
-       required
-      />
-      <select name="City_Id" onChange={handleChange}>
-        {data.map((city, index) => (
-          <option key={index} value={city.City_Id}>{city.City_Name}</option>
-        ))}
-      </select>
-      <button className="submit-btn">submit</button>
-    </form>
-  </div>
+        />
+        <select name="City_Id" onChange={handleChange}>
+          {data.map((city, index) => (
+            <option key={index} value={city.City_Id}>{city.City_Name}</option>
+          ))}
+        </select>
+        <button className="submit-btn">submit</button>
+      </form>
+    </div>
   )
 }

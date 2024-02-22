@@ -4,6 +4,7 @@ const adminController = require('./controllers/adminController');
 const stateController = require('./controllers/stateController');
 const cityController = require('./controllers/cityController');
 const areaController = require('./controllers/areaController');
+const pTypeController = require('./controllers/pTypeController');
 
 const app = express();
 app.use(express.json());
@@ -38,6 +39,13 @@ app.get('/getAreas', areaController.getAreas);
 app.delete('/deleteArea/:id', areaController.deleteArea);
 app.put('/updateArea/:id', areaController.updateArea);
 app.get('/getAreasRecord/:id', areaController.getAreasRecord);
+
+//product-type route
+app.post('/createProductType', pTypeController.createProductType);
+app.get('/getAllProductType', pTypeController.getAllProductType);
+app.delete('/deleteProductType/:id', pTypeController.deleteProductType);
+app.put('/updateProductType/:id', pTypeController.updateProductType);
+app.get('/getProductTypeRecord/:id', pTypeController.getProductTypeRecord);
 
 app.listen(3030, () => {
   console.log("Running");

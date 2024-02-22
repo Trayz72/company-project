@@ -11,6 +11,9 @@ import { CityUpdate } from "./Component/CityUpdate"
 import { CreateArea } from "./Component/CreateArea"
 import { Area } from "./Component/Area"
 import { AreaUpdate } from "./Component/AreaUpdate"
+import { CreateProductType } from "./Component/CreateProductType"
+import { ProductType } from "./Component/ProductType"
+import { ProductTypeUpdate } from "./Component/ProductTypeUpdate"
 
 function App() {
 
@@ -33,6 +36,10 @@ function App() {
           <Route path="/area" element={<Area/>}></Route>
           <Route path="/createArea" element={<CreateArea/>}></Route>
           <Route path="/AreaUpdate/:id" element={<AreaUpdate/>}></Route>
+
+          <Route path="/createProductType" element={<CreateProductType/>}></Route>
+          <Route path="/productType" element={<ProductType/>}></Route>
+          <Route path="/productTypeUpdate/:id" element={<ProductTypeUpdate/>}></Route>
         </Routes>
       </BrowserRouter>
     </>
