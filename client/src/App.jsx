@@ -17,6 +17,9 @@ import { ProductTypeUpdate } from "./Component/ProductTypeUpdate"
 import { CreateProductCategory } from "./Component/CreateProductCategory"
 import { ProductCategory } from "./Component/ProductCategory"
 import { ProductCategoryUpdate } from "./Component/ProductCategoryUpdate"
+import { CreateProductWeight } from "./Component/CreateProductWeight"
+import { ProductWeight } from "./Component/ProductWeight"
+import { ProductWeightUpdate } from "./Component/ProductWeightUpdate"
 
 function App() {
 
@@ -47,6 +50,10 @@ function App() {
           <Route path="/createProductCategory" element={<CreateProductCategory/>}></Route>
           <Route path="/productCategory" element={<ProductCategory/>}></Route>
           <Route path="/productCategoryUpdate/:id" element={<ProductCategoryUpdate/>}></Route>
+
+          <Route path="/createProductWeight" element={<CreateProductWeight/>}></Route>
+          <Route path="/productWeight" element={<ProductWeight/>}></Route>
+          <Route path="/productWeightUpdate/:id" element={<ProductWeightUpdate/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

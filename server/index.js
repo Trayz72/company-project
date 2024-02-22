@@ -5,7 +5,8 @@ const stateController = require('./controllers/stateController');
 const cityController = require('./controllers/cityController');
 const areaController = require('./controllers/areaController');
 const pTypeController = require('./controllers/pTypeController');
-const pCategoryController = require('./controllers/pCategoryController')
+const pCategoryController = require('./controllers/pCategoryController');
+const pWeightController = require('./controllers/pWeightController');
 
 const app = express();
 app.use(express.json());
@@ -54,6 +55,13 @@ app.get('/getAllProductCategory', pCategoryController.getAllProductCategory);
 app.delete('/deleteProductCategory/:id',pCategoryController.deleteProductCategory);
 app.put('/updateProductCategory/:id', pCategoryController.updateProductCategory);
 app.get('/getProductCategoryRecord/:id', pCategoryController.getProductCategoryRecord);
+
+//product-weight route
+app.post('/createProductWeight', pWeightController.createProductWeight);
+app.get('/getAllProductWeight', pWeightController.getAllProductWeight);
+app.delete('/deleteProductWeight/:id', pWeightController.deleteProductWeight);
+app.put('/updateProductWeight/:id', pWeightController.updateProductWeight);
+app.get('/getProductWeightRecord/:id', pWeightController.getProductWeightRecord);
 
 app.listen(3030, () => {
   console.log("Running");
