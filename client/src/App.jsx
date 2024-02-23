@@ -20,6 +20,9 @@ import { ProductCategoryUpdate } from "./Component/ProductCategoryUpdate"
 import { CreateProductWeight } from "./Component/CreateProductWeight"
 import { ProductWeight } from "./Component/ProductWeight"
 import { ProductWeightUpdate } from "./Component/ProductWeightUpdate"
+import { CreateColor } from "./Component/CreateColor"
+import { Color } from "./Component/Color"
+import { ColorUpdate } from "./Component/ColorUpdate"
 
 function App() {
 
@@ -54,6 +57,10 @@ function App() {
           <Route path="/createProductWeight" element={<CreateProductWeight/>}></Route>
           <Route path="/productWeight" element={<ProductWeight/>}></Route>
           <Route path="/productWeightUpdate/:id" element={<ProductWeightUpdate/>}></Route>
+
+          <Route path="/createColor" element={<CreateColor/>}></Route>
+          <Route path="/color" element={<Color/>}></Route>
+          <Route path="/colorUpdate/:id" element={<ColorUpdate/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

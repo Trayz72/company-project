@@ -7,6 +7,7 @@ const areaController = require('./controllers/areaController');
 const pTypeController = require('./controllers/pTypeController');
 const pCategoryController = require('./controllers/pCategoryController');
 const pWeightController = require('./controllers/pWeightController');
+const colorController = require('./controllers/colorController');
 
 const app = express();
 app.use(express.json());
@@ -62,6 +63,13 @@ app.get('/getAllProductWeight', pWeightController.getAllProductWeight);
 app.delete('/deleteProductWeight/:id', pWeightController.deleteProductWeight);
 app.put('/updateProductWeight/:id', pWeightController.updateProductWeight);
 app.get('/getProductWeightRecord/:id', pWeightController.getProductWeightRecord);
+
+//color-table route
+app.post('/createColor', colorController.createColor);
+app.get('/getAllColors', colorController.getAllColors);
+app.delete('/deleteColorName/:id', colorController.deleteColorName);
+app.put('/updateColorName/:id', colorController.updateColorName);
+app.get('/getColorRecord/:id', colorController.getColorRecord);
 
 app.listen(3030, () => {
   console.log("Running");
