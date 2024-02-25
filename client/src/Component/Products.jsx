@@ -58,7 +58,7 @@ export const Products = () => {
                     />
                   </td>
                   <td className="action-buttons">
-                    {/* <Link className="link" to={`/AreaUpdate/${item.Pincode}`}>update</Link> */}
+                    <Link className="link" to={`/productUpdate/${item.ProductId}`}>update</Link>
                     <button className="delete-btn" onClick={() => handleDelete(item.ProductId)}>
                       delete
                     </button>

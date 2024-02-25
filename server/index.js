@@ -8,7 +8,7 @@ const pTypeController = require('./controllers/pTypeController');
 const pCategoryController = require('./controllers/pCategoryController');
 const pWeightController = require('./controllers/pWeightController');
 const colorController = require('./controllers/colorController');
-const {upload,createProduct,getAllProduct,deleteProduct} = require('./controllers/productController');
+const {upload,createProduct,getAllProduct,deleteProduct,getProductById,updateProduct} = require('./controllers/productController');
 // const { upload } = require('./controllers/productController');
 
 const app = express();
@@ -78,6 +78,8 @@ app.get('/getColorRecord/:id', colorController.getColorRecord);
 app.post('/createProduct', upload.single('Image'), createProduct);
 app.get('/getAllProduct', getAllProduct);
 app.delete('/deleteProduct/:id', deleteProduct);
+app.put('/updateProduct/:id',upload.single('Image'), updateProduct);
+app.get('/getProductById/:id', getProductById);
 
 app.listen(3030, () => {
   console.log("Running");

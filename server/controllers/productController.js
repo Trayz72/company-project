@@ -88,9 +88,50 @@ const deleteProduct = (req, res) => {
   });
 }
 
+//get record of product from product table from specific id
+const getProductById = (req, res) => {
+  const id = req.params.id;
+  const sql = "SELECT * FROM products WHERE ProductId = ?";
+  // console.log(id);
+  db.query(sql, [id], (err, data) => {
+    if (err) {
+      res.json({ Error: "Error" });
+    } else {
+      res.json(data);
+    }
+  });
+}
+
+//update products table record based on unique id
+const updateProduct = (req, res) => {
+  const id = req.params.id;
+  const sql = `UPDATE products SET ProductName = ?, ProductDescription = ?, ProductPrice =?, Product_Category_Id = ?, Product_Type_Id =?, Product_Weight_Id = ?, Color_Id = ?, Image = ? WHERE ProductId = ?`;
+
+  const values = [
+    req.body.ProductName, 
+    req.body.ProductDescription,
+    req.body.ProductPrice,
+    req.body.Product_Category_Id,
+    req.body.Product_Type_Id,
+    req.body.Product_Weight_Id,
+    req.body.Color_Id,
+    req.file.filename
+  ];
+
+  db.query(sql, [...values, id], (err, data) => {
+    if (err) {
+      return res.json({ Error: "Error" });
+    } else {
+      res.json(data);
+    }
+  });
+}
+
 module.exports = {
   upload,
   createProduct,
   getAllProduct,
   deleteProduct,
+  getProductById,
+  updateProduct,
 };
