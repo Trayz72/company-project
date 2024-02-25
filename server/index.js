@@ -77,7 +77,7 @@ app.get('/getColorRecord/:id', colorController.getColorRecord);
 //product-table route
 app.post('/createProduct', upload.single('Image'), createProduct);
 app.get('/getAllProduct', getAllProduct);
-app.delete('/deleteProduct', deleteProduct);
+app.delete('/deleteProduct/:id', deleteProduct);
 
 app.listen(3030, () => {
   console.log("Running");

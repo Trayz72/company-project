@@ -12,11 +12,11 @@ export const Products = () => {
       .catch(error => console.log(error))
   }, [])
 
-  function handleDelete() {
-    // axios
-    //   .delete("http://localhost:3030/deleteArea/" + id)
-    //   .then(res => window.location.reload())
-    //   .catch(err => console.log(err))
+  function handleDelete(id) {
+    axios
+      .delete("http://localhost:3030/deleteProduct/" + id)
+      .then(res => window.location.reload())
+      .catch(err => console.log(err))
   }
   
   return (

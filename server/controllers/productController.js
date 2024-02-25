@@ -78,7 +78,7 @@ const getAllProduct = (req, res) => {
 const deleteProduct = (req, res) => {
   const sql = ` DELETE FROM products where ProductId = ?`;
   const id = req.params.id;
-
+  console.log(id);
   db.query(sql, [id], (err, data) => {
     if (err) {
       res.json({ Error: "Error" });
