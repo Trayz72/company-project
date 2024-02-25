@@ -8,10 +8,13 @@ const pTypeController = require('./controllers/pTypeController');
 const pCategoryController = require('./controllers/pCategoryController');
 const pWeightController = require('./controllers/pWeightController');
 const colorController = require('./controllers/colorController');
+const {upload,createProduct,getAllProduct,deleteProduct} = require('./controllers/productController');
+// const { upload } = require('./controllers/productController');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(express.static('Public'))
 
 // admin-route
 app.get('/', adminController.getAllAdmins);
@@ -70,6 +73,11 @@ app.get('/getAllColors', colorController.getAllColors);
 app.delete('/deleteColorName/:id', colorController.deleteColorName);
 app.put('/updateColorName/:id', colorController.updateColorName);
 app.get('/getColorRecord/:id', colorController.getColorRecord);
+
+//product-table route
+app.post('/createProduct', upload.single('Image'), createProduct);
+app.get('/getAllProduct', getAllProduct);
+app.delete('/deleteProduct', deleteProduct);
 
 app.listen(3030, () => {
   console.log("Running");

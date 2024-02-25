@@ -3,7 +3,7 @@ const db = require('../db');
 //insert the record in area_table
 exports.createArea = (req, res) => {
   const sql = `INSERT INTO area_table (Pincode, Area_Name, City_Id) VALUES (?,?,?)`;
-
+  console.log(req.body);
   const values = [req.body.Pincode, req.body.Area_Name, req.body.City_Id];
 
   db.query(sql, values, (err, data) => {
