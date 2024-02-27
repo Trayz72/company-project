@@ -26,12 +26,15 @@ import { ColorUpdate } from "./Component/ColorUpdate"
 import { CreateProducts } from "./Component/CreateProducts"
 import { Products } from "./Component/Products"
 import { ProductsUpdate } from "./Component/ProductsUpdate"
+import { NavBar } from "./Component/NavBar"
 
 function App() {
 
   return (
     <>
+      
       <BrowserRouter>
+        <NavBar/>
         <Routes>
           <Route path="/" element={<Admin/>}></Route>
           <Route path="/create" element={<CreateAdmin/>}></Route>

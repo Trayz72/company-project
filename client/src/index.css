@@ -1,6 +1,6 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -10,14 +10,22 @@ html, body {
   height: 100%;
 }
 
-/* Admin-container */
+#root {
+  width: 100%;
+}
+
+/* container */
 .table-container {
   margin-top: 20px;
+  /* max-width: 100%; */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 
@@ -37,7 +45,6 @@ html, body {
   background-color: rgb(42, 83, 154);
 }
 
-
 .table {
   width: 60%;
   border-collapse: collapse;
@@ -45,7 +52,7 @@ html, body {
 
 .table th, .table td {
   border: 1px solid #d4d4d4;
-  padding: 8px;
+  padding: 4px;
   text-align: left;
 }
 
@@ -79,7 +86,7 @@ html, body {
   font-weight: 600;
 }
 
-/* create-admin */
+/* create */
 
 .form-container {
   width: 300px;
@@ -126,4 +133,20 @@ input {
 
 .submit-btn:hover {
   background-color: rgb(42, 83, 154);
+}
+
+@media screen and (max-width: 768px) {
+  .table-container {
+    width: 90%; /* Adjust this value as needed */
+  }
+
+  .table {
+    width: 100%;
+    font-size: 12px; /* Adjust this value as needed */
+  }
+
+  .table th,
+  .table td {
+    padding: 3px; /* Adjust this value as needed */
+  }
 }
