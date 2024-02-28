@@ -27,6 +27,7 @@ import { CreateProducts } from "./Component/CreateProducts"
 import { Products } from "./Component/Products"
 import { ProductsUpdate } from "./Component/ProductsUpdate"
 import { NavBar } from "./Component/NavBar"
+import { AdminLogin } from "./Component/AdminLogin"
 
 function App() {
 
@@ -36,9 +37,12 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Routes>
-          <Route path="/" element={<Admin/>}></Route>
+          <Route path="/" element={<AdminLogin/>}></Route>
+          
+          <Route path="/admin" element={<Admin/>}></Route>
           <Route path="/create" element={<CreateAdmin/>}></Route>
           <Route path="/update/:id" element={<UpdateAdmin/>}></Route>
+
           
           <Route path="/state" element={<State/>}></Route>
           <Route path="/createState" element={<CreateState/>}></Route>

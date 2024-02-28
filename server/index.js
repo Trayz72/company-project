@@ -9,11 +9,16 @@ const pCategoryController = require('./controllers/pCategoryController');
 const pWeightController = require('./controllers/pWeightController');
 const colorController = require('./controllers/colorController');
 const {upload,createProduct,getAllProduct,deleteProduct,getProductById,updateProduct} = require('./controllers/productController');
+const adminLoginController = require('./controllers/adminLoginController')
 // const { upload } = require('./controllers/productController');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:5173"],
+  methods: ['GET', 'POST', 'PUT'],
+  credentials: true
+}));
 app.use(express.static('Public'))
 
 // admin-route
@@ -22,6 +27,9 @@ app.post('/create', adminController.createAdmin);
 app.put('/update/:id', adminController.updateAdmin);
 app.delete('/delete/:id', adminController.deleteAdmin);
 app.get('/getrecord/:id', adminController.getRecordById);
+
+//admin-login
+app.post('/adminLogin', adminLoginController.adminLogin);
 
 // state-route
 app.get('/states', stateController.getAllStates);
