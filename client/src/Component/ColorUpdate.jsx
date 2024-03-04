@@ -14,7 +14,7 @@ export const ColorUpdate = () => {
   function handleSubmit(event) {
     event.preventDefault()
     axios.put(`http://localhost:3030/updateColorName/${id}`, values)
-    .then(res => navigate('/Color'))
+    .then(res => navigate('/dashboard/Color'))
     .catch(err => console.log(err))
   }
 

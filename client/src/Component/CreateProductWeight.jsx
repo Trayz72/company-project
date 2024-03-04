@@ -20,7 +20,7 @@ export const CreateProductWeight = () => {
   function handleSubmit(event) {
     event.preventDefault()
     axios.post('http://localhost:3030/createProductWeight', values)
-    .then(res =>navigate('/ProductWeight'))
+    .then(res =>navigate('/dashboard/ProductWeight'))
     .catch(err => console.log(err))
   }
   

@@ -20,7 +20,7 @@ export const CreateColor = () => {
   function handleSubmit(event) {
     event.preventDefault()
     axios.post('http://localhost:3030/createColor', values)
-    .then(res =>navigate('/color'))
+    .then(res =>navigate('/dashboard/color'))
     .catch(err => console.log(err))
   }
   

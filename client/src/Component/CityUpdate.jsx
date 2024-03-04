@@ -38,7 +38,7 @@ export const CityUpdate = () => {
     event.preventDefault()
     axios
       .put("http://localhost:3030/updateCity/" + id, values)
-      .then(res => navigate('/city'))
+      .then(res => navigate('/dashboard/city'))
       .catch(err => console.log(err))
   }
   return (

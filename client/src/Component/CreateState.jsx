@@ -19,7 +19,7 @@ export const CreateState = () => {
   function handleSubmit(event) {
     event.preventDefault()
     axios.post('http://localhost:3030/createState', values)
-    .then(res => navigate('/state'))
+    .then(res => navigate('/dashboard/state'))
     .catch(err => console.log(err))
   }
   

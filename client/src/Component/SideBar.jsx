@@ -24,31 +24,31 @@ export function SideBar({ isActive, toggleSidebar }) {
             {isCheck && 
               <ul className='sidebar-list'>
               <li className='sidebar-list-item'>
-                <Link to='/' >adminList</Link>
+                <Link to='/dashboard/admin' >adminList</Link>
               </li>
               <li className='sidebar-list-item'>
-                <Link to='/state' >stateList</Link>
+                <Link to='/dashboard/state' >stateList</Link>
               </li>
               <li className='sidebar-list-item'>
-                <Link to='/city' >cityList</Link>
+                <Link to='/dashboard/city' >cityList</Link>
               </li>
               <li className='sidebar-list-item'>
-                <Link to='/area' >areaList</Link>
+                <Link to='/dashboard/area' >areaList</Link>
               </li>
               <li className='sidebar-list-item'>
-                <Link to='/productType' >productTypeList</Link>
+                <Link to='/dashboard/productType' >productTypeList</Link>
               </li>
               <li className='sidebar-list-item'>
-                <Link to='/productCategory' >productCategoryList</Link>
+                <Link to='/dashboard/productCategory' >productCategoryList</Link>
               </li>
               <li className='sidebar-list-item'>
-                <Link to='/productWeight' >productWeightList</Link>
+                <Link to='/dashboard/productWeight' >productWeightList</Link>
               </li>
               <li className='sidebar-list-item'>
-                <Link to='/color' >colorList</Link>
+                <Link to='/dashboard/color' >colorList</Link>
               </li>
               <li className='sidebar-list-item'>
-                <Link to='/products' >productsist</Link>
+                <Link to='/dashboard/products' >productsist</Link>
               </li>
             </ul>
             }

@@ -15,7 +15,7 @@ export const UpdateAdmin = () => {
   function handleSubmit(event) {
     event.preventDefault()
     axios.put(`http://localhost:3030/update/${id}`, values)
-    .then(res => navigate('/'))
+    .then(res => navigate('/dashboard/admin'))
     .catch(err => console.log(err))
   }
 

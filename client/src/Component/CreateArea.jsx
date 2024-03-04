@@ -28,7 +28,7 @@ export const CreateArea = () => {
   function handleSubmit(event) {
     event.preventDefault();
     axios.post('http://localhost:3030/createArea', values)
-    .then(res => navigate('/area'))
+    .then(res => navigate('/dashboard/area'))
     .catch(err => console.log(err))
   }
 

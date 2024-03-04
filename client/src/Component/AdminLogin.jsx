@@ -27,7 +27,7 @@ export const AdminLogin = () => {
     axios.post('http://localhost:3030/adminLogin', values)
     .then(res => {
       if (res.data.loginStatus) {
-        navigate('/admin')  
+        navigate('/dashboard')  
       } else {
         setError(res.data.Error)
       }

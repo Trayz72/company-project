@@ -4,6 +4,7 @@ import axios from 'axios';
 
 export const Area = () => {
   const [data, setData] = useState([]);
+  
 
   useEffect(()=> {
     axios
@@ -22,7 +23,7 @@ export const Area = () => {
   return (
     <>
       <div className="table-container">
-        <Link to="/CreateArea" className="link">
+        <Link to="/dashboard/CreateArea" className="link">
           Create
         </Link>
       {data.length !== 0 ? (
@@ -42,7 +43,7 @@ export const Area = () => {
                   <td>{item.Area_Name}</td>
                   <td>{item.City_Name}</td>
                   <td className="action-buttons">
-                    <Link className="link" to={`/AreaUpdate/${item.Pincode}`}>update</Link>
+                    <Link className="link" to={`/dashboard/AreaUpdate/${item.Pincode}`}>update</Link>
                     <button className="delete-btn" onClick={() => handleDelete(item.Pincode)}>
                       delete
                     </button>

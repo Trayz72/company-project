@@ -21,7 +21,7 @@ export const Color = () => {
 
   return (
     <div className="table-container">
-        <Link to="/CreateColor" className="link">
+        <Link to="/dashboard/CreateColor" className="link">
           Create
         </Link>
       {data.length !== 0 ? (
@@ -39,7 +39,7 @@ export const Color = () => {
                   <td>{item.Color_Id}</td>
                   <td>{item.Color_Name}</td>
                   <td className="action-buttons">
-                    <Link className="link" to={`/ColorUpdate/${item.Color_Id}`}>update</Link>
+                    <Link className="link" to={`/dashboard/ColorUpdate/${item.Color_Id}`}>update</Link>
                     <button className="delete-btn" onClick={() => handleDelete(item.Color_Id)}>
                       delete
                     </button>

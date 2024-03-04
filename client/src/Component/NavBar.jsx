@@ -3,6 +3,7 @@ import '../styles/NavBar.css'
 import { SideBar } from './SideBar';
 import { GiHamburgerMenu } from "react-icons/gi";
 import '../styles/SideBar.css'
+import { Outlet } from 'react-router-dom';
 
 export const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -13,11 +14,14 @@ export const NavBar = () => {
 
   return (
     <div className="header-container">
-      <header className={isActive ? 'active' : ''}>
-        <GiHamburgerMenu onClick={toggleSidebar} className='hamburger' />
-        <h2>Admin Dashboard</h2>
-      </header>
       <SideBar isActive={isActive} toggleSidebar={toggleSidebar} />
+      <div className='section'>
+        <header className={isActive ? 'active' : ''}>
+          <GiHamburgerMenu onClick={toggleSidebar} className='hamburger' />
+          <h2>Admin Dashboard</h2>
+        </header>
+        <Outlet/>
+      </div>
     </div>
   );
 }

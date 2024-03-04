@@ -14,7 +14,7 @@ export const ProductCategoryUpdate = () => {
   function handleSubmit(event) {
     event.preventDefault()
     axios.put(`http://localhost:3030/updateProductCategory/${id}`, values)
-    .then(res => navigate('/ProductCategory'))
+    .then(res => navigate('/dashboard/ProductCategory'))
     .catch(err => console.log(err))
   }
 

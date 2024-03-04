@@ -21,7 +21,7 @@ export const ProductWeight = () => {
 
   return (
     <div className="table-container">
-        <Link to="/CreateProductWeight" className="link">
+        <Link to="/dashboard/CreateProductWeight" className="link">
           Create
         </Link>
       {data.length !== 0 ? (
@@ -39,7 +39,7 @@ export const ProductWeight = () => {
                   <td>{item.Product_Weight_Id}</td>
                   <td>{item.Product_Weight}</td>
                   <td className="action-buttons">
-                    <Link className="link" to={`/ProductWeightUpdate/${item.Product_Weight_Id}`}>update</Link>
+                    <Link className="link" to={`/dashboard/ProductWeightUpdate/${item.Product_Weight_Id}`}>update</Link>
                     <button className="delete-btn" onClick={() => handleDelete(item.Product_Weight_Id)}>
                       delete
                     </button>

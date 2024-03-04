@@ -21,7 +21,7 @@ export const ProductCategory = () => {
 
   return (
     <div className="table-container">
-        <Link to="/CreateProductCategory" className="link">
+        <Link to="/dashboard/CreateProductCategory" className="link">
           Create
         </Link>
       {data.length !== 0 ? (
@@ -39,7 +39,7 @@ export const ProductCategory = () => {
                   <td>{item.Product_Category_Id}</td>
                   <td>{item.Product_Category_Name}</td>
                   <td className="action-buttons">
-                    <Link className="link" to={`/ProductCategoryUpdate/${item.Product_Category_Id}`}>update</Link>
+                    <Link className="link" to={`/dashboard/ProductCategoryUpdate/${item.Product_Category_Id}`}>update</Link>
                     <button className="delete-btn" onClick={() => handleDelete(item.Product_Category_Id)}>
                       delete
                     </button>

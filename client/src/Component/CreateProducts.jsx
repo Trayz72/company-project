@@ -76,7 +76,7 @@ export const CreateProducts = () => {
     formData.append('Color_Id', values.Color_Id)
     formData.append('Image', values.Image)
     axios.post('http://localhost:3030/createProduct', formData)
-    .then(res => navigate('/Products'))
+    .then(res => navigate('/dashboard/Products'))
     .catch(err => console.log(err))
   }
 

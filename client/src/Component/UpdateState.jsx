@@ -14,7 +14,7 @@ export const UpdateState = () => {
   function handleSubmit(event) {
     event.preventDefault()
     axios.put(`http://localhost:3030/updateState/${id}`, values)
-    .then(res => navigate('/state'))
+    .then(res => navigate('/dashboard/state'))
     .catch(err => console.log(err))
   }
 

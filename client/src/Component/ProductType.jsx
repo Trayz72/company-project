@@ -21,7 +21,7 @@ export const ProductType = () => {
 
   return (
     <div className="table-container">
-        <Link to="/CreateProductType" className="link">
+        <Link to="/dashboard/CreateProductType" className="link">
           Create
         </Link>
       {data.length !== 0 ? (
@@ -39,7 +39,7 @@ export const ProductType = () => {
                   <td>{item.Product_Type_Id}</td>
                   <td>{item.Product_Type_Name}</td>
                   <td className="action-buttons">
-                    <Link className="link" to={`/ProductTypeUpdate/${item.Product_Type_Id}`}>update</Link>
+                    <Link className="link" to={`/dashboard/ProductTypeUpdate/${item.Product_Type_Id}`}>update</Link>
                     <button className="delete-btn" onClick={() => handleDelete(item.Product_Type_Id)}>
                       delete
                     </button>

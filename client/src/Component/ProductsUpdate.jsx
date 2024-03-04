@@ -88,7 +88,7 @@ export const ProductsUpdate = () => {
     formData.append('Color_Id', values.Color_Id)
     formData.append('Image', values.Image)
     axios.put(`http://localhost:3030/updateProduct/${id}`, formData)
-    .then(res => navigate('/products'))
+    .then(res => navigate('/dashboard/products'))
     .catch(err => console.log(err))
   }
 

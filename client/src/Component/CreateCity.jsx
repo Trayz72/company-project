@@ -29,7 +29,7 @@ export function CreateCity() {
   function handleSubmit(event) {
     event.preventDefault()
     axios.post('http://localhost:3030/createCity', values)
-    .then(res => navigate('/city'))
+    .then(res => navigate('/dashboard/city'))
     .catch(err => console.log(err))
   }
   // console.log(values);

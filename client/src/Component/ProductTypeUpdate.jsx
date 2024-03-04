@@ -14,7 +14,7 @@ export const ProductTypeUpdate = () => {
   function handleSubmit(event) {
     event.preventDefault()
     axios.put(`http://localhost:3030/updateProductType/${id}`, values)
-    .then(res => navigate('/ProductType'))
+    .then(res => navigate('/dashboard/ProductType'))
     .catch(err => console.log(err))
   }
 

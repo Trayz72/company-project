@@ -21,7 +21,7 @@ export const Admin = () => {
 
   return (
     <div className="table-container">
-        <Link to="/create" className="link">
+        <Link to="/dashboard/create" className="link">
           Create
         </Link>
       {data.length !== 0 ? (
@@ -41,7 +41,7 @@ export const Admin = () => {
                   <td>{item.User_Name}</td>
                   <td>{item.Password}</td>
                   <td className="action-buttons">
-                    <Link className="link" to={`/update/${item.Admin_Id}`}>update</Link>
+                    <Link className="link" to={`/dashboard/update/${item.Admin_Id}`}>update</Link>
                     <button className="delete-btn" onClick={() => handleDelete(item.Admin_Id)}>
                       delete
                     </button>

@@ -23,7 +23,7 @@ export function City() {
   return (
     <>
       <div className="table-container">
-        <Link to="/CreateCity" className="link">
+        <Link to="/dashboard/CreateCity" className="link">
           Create
         </Link>
       {data.length !== 0 ? (
@@ -43,7 +43,7 @@ export function City() {
                   <td>{item.City_Name}</td>
                   <td>{item.state_name}</td>
                   <td className="action-buttons">
-                    <Link className="link" to={`/CityUpdate/${item.City_Id}`}>update</Link>
+                    <Link className="link" to={`/dashboard/CityUpdate/${item.City_Id}`}>update</Link>
                     <button className="delete-btn" onClick={() => handleDelete(item.City_Id)}>
                       delete
                     </button>

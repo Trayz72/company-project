@@ -33,49 +33,53 @@ function App() {
 
   return (
     <>
-      
       <BrowserRouter>
-        <NavBar/>
+      {/* Admin Dashboard Routes
+      {isLoggedIn && (
+        <> */}
         <Routes>
           <Route path="/" element={<AdminLogin/>}></Route>
-          
-          <Route path="/admin" element={<Admin/>}></Route>
-          <Route path="/create" element={<CreateAdmin/>}></Route>
-          <Route path="/update/:id" element={<UpdateAdmin/>}></Route>
+          <Route path="/dashboard" element={<NavBar/>}>
+            <Route path="/dashboard/admin" element={<Admin/>}></Route>
+            <Route path="/dashboard/create" element={<CreateAdmin/>}></Route>
+            <Route path="/dashboard/update/:id" element={<UpdateAdmin/>}></Route>
 
-          
-          <Route path="/state" element={<State/>}></Route>
-          <Route path="/createState" element={<CreateState/>}></Route>
-          <Route path="/updateState/:id" element={<UpdateState/>}></Route>
-          
-          <Route path="/city" element={<City/>}></Route>
-          <Route path="/createCity" element={<CreateCity/>}></Route>
-          <Route path="/CityUpdate/:id" element={<CityUpdate/>}></Route>
+            
+            <Route path="/dashboard/state" element={<State/>}></Route>
+            <Route path="/dashboard/createState" element={<CreateState/>}></Route>
+            <Route path="/dashboard/updateState/:id" element={<UpdateState/>}></Route>
+            
+            <Route path="/dashboard/city" element={<City/>}></Route>
+            <Route path="/dashboard/createCity" element={<CreateCity/>}></Route>
+            <Route path="/dashboard/CityUpdate/:id" element={<CityUpdate/>}></Route>
 
-          <Route path="/area" element={<Area/>}></Route>
-          <Route path="/createArea" element={<CreateArea/>}></Route>
-          <Route path="/AreaUpdate/:id" element={<AreaUpdate/>}></Route>
+            <Route path="/dashboard/area" element={<Area/>}></Route>
+            <Route path="/dashboard/createArea" element={<CreateArea/>}></Route>
+            <Route path="/dashboard/AreaUpdate/:id" element={<AreaUpdate/>}></Route>
 
-          <Route path="/createProductType" element={<CreateProductType/>}></Route>
-          <Route path="/productType" element={<ProductType/>}></Route>
-          <Route path="/productTypeUpdate/:id" element={<ProductTypeUpdate/>}></Route>
+            <Route path="/dashboard/createProductType" element={<CreateProductType/>}></Route>
+            <Route path="/dashboard/productType" element={<ProductType/>}></Route>
+            <Route path="/dashboard/productTypeUpdate/:id" element={<ProductTypeUpdate/>}></Route>
 
-          <Route path="/createProductCategory" element={<CreateProductCategory/>}></Route>
-          <Route path="/productCategory" element={<ProductCategory/>}></Route>
-          <Route path="/productCategoryUpdate/:id" element={<ProductCategoryUpdate/>}></Route>
+            <Route path="/dashboard/createProductCategory" element={<CreateProductCategory/>}></Route>
+            <Route path="/dashboard/productCategory" element={<ProductCategory/>}></Route>
+            <Route path="/dashboard/productCategoryUpdate/:id" element={<ProductCategoryUpdate/>}></Route>
 
-          <Route path="/createProductWeight" element={<CreateProductWeight/>}></Route>
-          <Route path="/productWeight" element={<ProductWeight/>}></Route>
-          <Route path="/productWeightUpdate/:id" element={<ProductWeightUpdate/>}></Route>
+            <Route path="/dashboard/createProductWeight" element={<CreateProductWeight/>}></Route>
+            <Route path="/dashboard/productWeight" element={<ProductWeight/>}></Route>
+            <Route path="/dashboard/productWeightUpdate/:id" element={<ProductWeightUpdate/>}></Route>
 
-          <Route path="/createColor" element={<CreateColor/>}></Route>
-          <Route path="/color" element={<Color/>}></Route>
-          <Route path="/colorUpdate/:id" element={<ColorUpdate/>}></Route>
+            <Route path="/dashboard/createColor" element={<CreateColor/>}></Route>
+            <Route path="/dashboard/color" element={<Color/>}></Route>
+            <Route path="/dashboard/colorUpdate/:id" element={<ColorUpdate/>}></Route>
 
-          <Route path="/createProducts" element={<CreateProducts/>}></Route>
-          <Route path="/products" element={<Products/>}></Route>
-          <Route path="/productUpdate/:id" element={<ProductsUpdate/>}></Route>
+            <Route path="/dashboard/createProducts" element={<CreateProducts/>}></Route>
+            <Route path="/dashboard/products" element={<Products/>}></Route>
+            <Route path="/dashboard/productUpdate/:id" element={<ProductsUpdate/>}></Route>
+          </Route>
         </Routes>
+        {/* </>
+        )} */}
       </BrowserRouter>
     </>
   )

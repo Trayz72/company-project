@@ -14,7 +14,7 @@ export const ProductWeightUpdate = () => {
   function handleSubmit(event) {
     event.preventDefault()
     axios.put(`http://localhost:3030/updateProductWeight/${id}`, values)
-    .then(res => navigate('/ProductWeight'))
+    .then(res => navigate('/dashboard/ProductWeight'))
     .catch(err => console.log(err))
   }
 

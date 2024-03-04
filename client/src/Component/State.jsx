@@ -21,7 +21,7 @@ export function State() {
 
   return (
     <div className="table-container">
-        <Link to="/CreateState" className="link">
+        <Link to="/dashboard/CreateState" className="link">
           Create
         </Link>
       {data.length !== 0 ? (
@@ -39,7 +39,7 @@ export function State() {
                   <td>{item.stateId}</td>
                   <td>{item.state_name}</td>
                   <td className="action-buttons">
-                    <Link className="link" to={`/updateState/${item.stateId}`}>update</Link>
+                    <Link className="link" to={`/dashboard/updateState/${item.stateId}`}>update</Link>
                     <button className="delete-btn" onClick={() => handleDelete(item.stateId)}>
                       delete
                     </button>

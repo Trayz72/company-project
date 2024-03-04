@@ -19,7 +19,7 @@ export const CreateProductCategory = () => {
   function handleSubmit(event) {
     event.preventDefault()
     axios.post('http://localhost:3030/createProductCategory', values)
-    .then(res =>navigate('/ProductCategory'))
+    .then(res =>navigate('/dashboard/ProductCategory'))
     .catch(err => console.log(err))
   }
   
