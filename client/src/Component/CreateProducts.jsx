@@ -110,24 +110,28 @@ export const CreateProducts = () => {
         />
         <label htmlFor="Product_Category_Id">Product Category</label>
         <select name="Product_Category_Id" id="Product_Category_Id" onChange={handleChange}>
+          <option value="select">select</option>
           {data.productCategory.map((item, index) => (
             <option key={index} value={item.Product_Category_Id}>{item.Product_Category_Name}</option>
           ))}
         </select>
         <label htmlFor="Product_Type_Id">Product Type</label>
-        <select name="Product_Type_Id" id="Product_Type_Id" onChange={handleChange}>
+        <select name="Product_Type_Id" value={values.Product_Type_Id} id="Product_Type_Id" onChange={handleChange}>
+          <option value="select">select</option>
           {data.productType.map((item, index) => (
             <option key={index} value={item.Product_Type_Id}>{item.Product_Type_Name}</option>
           ))}
         </select>
         <label htmlFor="Product_Weight_Id">Product Weight</label>
         <select name="Product_Weight_Id" id="Product_Weight_Id" onChange={handleChange}>
+          <option value="select">select</option>
           {data.productWeight.map((item, index) => (
             <option key={index} value={item.Product_Weight_Id}>{item.Product_Weight}</option>
           ))}
         </select>
         <label htmlFor="Color_Id">Color</label>
-        <select name="Color_Id" id="Color_Id" onChange={handleChange}>
+        <select name="Color_Id" value={values.Color_Id} id="Color_Id" onChange={handleChange}>
+          <option value="select">select</option>
           {data.color.map((item, index) => (
             <option key={index} value={item.Color_Id}>{item.Color_Name}</option>
           ))}

@@ -105,7 +105,7 @@ const getProductById = (req, res) => {
 //update products table record based on unique id
 const updateProduct = (req, res) => {
   const id = req.params.id;
-  const sql = `UPDATE products SET ProductName = ?, ProductDescription = ?, ProductPrice =?, Product_Category_Id = ?, Product_Type_Id =?, Product_Weight_Id = ?, Color_Id = ?, Image = ? WHERE ProductId = ?`;
+  const sql = `UPDATE products SET ProductName = ?, ProductDescription = ?, ProductPrice =?, Product_Category_Id = ?, Product_Type_Id =?, Product_Weight_Id = ?, Color_Id = ?${req.file ? ', Image = ?' : ''} WHERE ProductId = ?`;
 
   const values = [
     req.body.ProductName, 
@@ -115,12 +115,25 @@ const updateProduct = (req, res) => {
     req.body.Product_Type_Id,
     req.body.Product_Weight_Id,
     req.body.Color_Id,
-    req.file.filename
+    ...(req.file ? [req.file.filename] : [])
   ];
 
   db.query(sql, [...values, id], (err, data) => {
     if (err) {
       return res.json({ Error: "Error" });
+    } else {
+      res.json(data);
+    }
+  });
+}
+
+const getProductDetailById = (req, res) => {
+  const id = req.params.id;
+  const sql = "SELECT ProductName, ProductDescription, ProductPrice, Image FROM products WHERE ProductId = ?";
+  // console.log(id);
+  db.query(sql, [id], (err, data) => {
+    if (err) {
+      res.json({ Error: "Error" });
     } else {
       res.json(data);
     }
@@ -134,4 +147,5 @@ module.exports = {
   deleteProduct,
   getProductById,
   updateProduct,
+  getProductDetailById
 };

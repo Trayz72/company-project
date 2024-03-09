@@ -8,9 +8,10 @@ const pTypeController = require('./controllers/pTypeController');
 const pCategoryController = require('./controllers/pCategoryController');
 const pWeightController = require('./controllers/pWeightController');
 const colorController = require('./controllers/colorController');
-const {upload,createProduct,getAllProduct,deleteProduct,getProductById,updateProduct} = require('./controllers/productController');
+const {upload,createProduct,getAllProduct,deleteProduct,getProductById,updateProduct,getProductDetailById} = require('./controllers/productController');
 const adminLoginController = require('./controllers/adminLoginController')
 // const { upload } = require('./controllers/productController');
+const userController = require('./controllers/userController');
 
 const app = express();
 app.use(express.json());
@@ -30,6 +31,10 @@ app.get('/getrecord/:id', adminController.getRecordById);
 
 //admin-login
 app.post('/adminLogin', adminLoginController.adminLogin);
+
+//user
+app.post('/userRegister', userController.userRegister);
+app.post('/userLogin', userController.userLogin);
 
 // state-route
 app.get('/states', stateController.getAllStates);
@@ -88,6 +93,10 @@ app.get('/getAllProduct', getAllProduct);
 app.delete('/deleteProduct/:id', deleteProduct);
 app.put('/updateProduct/:id',upload.single('Image'), updateProduct);
 app.get('/getProductById/:id', getProductById);
+
+app.get('/getProductDetailById/:id', getProductDetailById)
+
+app.get
 
 app.listen(3030, () => {
   console.log("Running");

@@ -1,0 +1,44 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333; /* Set your desired background color */
+  color: #fff; /* Set your desired text color */
+}
+
+.logo {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff; /* Set your desired link text color */
+  font-weight: bold;
+}
+
+.nav-links li a.active {
+  color: #ffcc00; /* Set your desired active link text color */
+}
+
+.logout-btn {
+  background-color: #ffcc00; /* Set your desired button background color */
+  color: #333; /* Set your desired button text color */
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #ffdb4d; /* Set your desired button hover background color */
+}

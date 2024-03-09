@@ -60,6 +60,7 @@ export const ProductsUpdate = () => {
         Image: res.data[0].Image,
       })))
       .catch(err => console.log(err))
+
   }, [id])
 
   function handleChange(event) {
@@ -76,7 +77,7 @@ export const ProductsUpdate = () => {
     }
   }
   
-  function handleSubmit() {
+  function handleSubmit(event) {
     event.preventDefault()
     const formData = new FormData();
     formData.append('ProductName', values.ProductName)
@@ -86,7 +87,9 @@ export const ProductsUpdate = () => {
     formData.append('Product_Type_Id', values.Product_Type_Id)
     formData.append('Product_Weight_Id', values.Product_Weight_Id)
     formData.append('Color_Id', values.Color_Id)
-    formData.append('Image', values.Image)
+    if (values.Image) {
+      formData.append('Image', values.Image);
+    }
     axios.put(`http://localhost:3030/updateProduct/${id}`, formData)
     .then(res => navigate('/dashboard/products'))
     .catch(err => console.log(err))
@@ -95,7 +98,7 @@ export const ProductsUpdate = () => {
   return (
     <div className="form-container">
       <h2>Update Product</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
         <label htmlFor="ProductName">Product Name</label>
         <input 
           type="text"
@@ -153,8 +156,15 @@ export const ProductsUpdate = () => {
           id="Image"
           onChange={handleChange}
           name="Image"
-          required
+          accept="image/*"
         />
+        {values.Image && (
+          <img
+            src={`http://localhost:3030/images/${values.Image}`}
+            alt="Current Product Image"
+            style={{ maxWidth: '200px', maxHeight: '200px' }}
+          />
+        )}
         <button className="submit-btn">submit</button>
       </form>
     </div>

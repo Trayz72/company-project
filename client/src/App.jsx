@@ -28,6 +28,9 @@ import { Products } from "./Component/Products"
 import { ProductsUpdate } from "./Component/ProductsUpdate"
 import { NavBar } from "./Component/NavBar"
 import { AdminLogin } from "./Component/AdminLogin"
+import UserRegistration from "./userComponent/UserRegistration"
+import { UserLogin } from "./userComponent/UserLogin"
+import Home from "./userComponent/Home"
 
 function App() {
 
@@ -77,6 +80,10 @@ function App() {
             <Route path="/dashboard/products" element={<Products/>}></Route>
             <Route path="/dashboard/productUpdate/:id" element={<ProductsUpdate/>}></Route>
           </Route>
+          <Route path="/userRegistration" element={<UserRegistration/>}></Route>
+          <Route path="/userLogin" element={<UserLogin/>}></Route>
+          <Route path="/home/:id/*" element={<Home/>}>
+          </Route>  
         </Routes>
         {/* </>
         )} */}

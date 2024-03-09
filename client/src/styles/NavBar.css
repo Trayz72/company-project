@@ -15,13 +15,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: margin-left 0.3s ease-in-out;
+  /* transition: margin-left 0.3s ease-in-out; */
   box-shadow: -1px 5px 8px 2px #464443;
 }
 
-header.active {
-  margin-left: 200px; /* Adjust the width based on your sidebar width */
-}
+/* header.active {
+  margin-left: 200px; 
+} */
 
 header h2 {
   color: #ffffff;
