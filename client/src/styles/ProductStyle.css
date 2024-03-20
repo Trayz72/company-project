@@ -1,6 +1,6 @@
 /* ProductStyles.css */
 
-.product-container {
+.product-listcontainer {
   display: flex;
   flex-direction: column;
   align-items: center;

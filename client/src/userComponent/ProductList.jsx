@@ -18,7 +18,7 @@ export const ProductList = ({userId}) => {
   return (
     <div>
       {data.map((item, index) => 
-        <div key={index} className="product-container">
+        <div key={index} className="product-listcontainer">
           <img 
             src={`http://localhost:3030/images/${item.Image}`} alt="" 
             style={{width:"200px", height:"150px"}}

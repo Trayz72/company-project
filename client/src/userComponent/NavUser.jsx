@@ -1,12 +1,21 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { logContext } from "./Context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { FaShoppingCart } from "react-icons/fa";
+import axios from 'axios';
 import '../styles/NavUser.css'
 
 
 export const NavUser = () => {
-
+  const [data, setData] = useState([])
   const { logout, userId } = useContext(logContext);
+
+  useEffect(()=> {
+    axios
+      .get("http://localhost:3030/getAllCartItemQuantity")
+      .then(res => setData(res.data[0]))
+      .catch(error => console.log(error))
+  }, [])
 
   return (
     <div>
@@ -29,15 +38,23 @@ export const NavUser = () => {
             </NavLink>
           </li>
         </ul>
-        <form>
-            <button
-              className="logout-btn"
-              onClick={logout}
-              type="button"
-            >
-              Logout
-            </button>
-        </form>
+        <div className='cart-btns'>
+          <div className='cart-container'>
+            <NavLink to={`/home/${userId}/cartitem`}>
+              <FaShoppingCart className='shopping-cart'/>
+            </NavLink>
+            <div className='quantity-badge'>{data.totalQuantity}</div>
+          </div>
+          <form>
+              <button
+                className="logout-btn"
+                onClick={logout}
+                type="button"
+              >
+                Logout
+              </button>
+          </form>
+        </div>
       </nav>
       <div>
         <Outlet/>

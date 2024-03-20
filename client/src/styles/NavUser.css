@@ -5,8 +5,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #333; /* Set your desired background color */
-  color: #fff; /* Set your desired text color */
+  background-color: rgb(42, 83, 154); 
+  color: #fff; 
 }
 
 .logo {
@@ -22,17 +22,46 @@
 
 .nav-links li a {
   text-decoration: none;
-  color: #fff; /* Set your desired link text color */
+  color: #fff; 
   font-weight: bold;
 }
 
 .nav-links li a.active {
-  color: #ffcc00; /* Set your desired active link text color */
+  color: #fff; 
+}
+
+.cart-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cart-container {
+  position: relative;
+}
+
+.shopping-cart {
+  width: 28px; 
+  height: 28px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.quantity-badge {
+  position: absolute;
+  top: -7px;
+  right: -4px;
+  background-color: rgb(222, 76, 76); 
+  color: white; 
+  border-radius: 50%; 
+  padding: 3px 6px; 
+  font-size: 12px; 
 }
 
 .logout-btn {
-  background-color: #ffcc00; /* Set your desired button background color */
-  color: #333; /* Set your desired button text color */
+  background-color: #fff;
+  color: #333; 
   border: none;
   padding: 8px 16px;
   cursor: pointer;
@@ -40,5 +69,5 @@
 }
 
 .logout-btn:hover {
-  background-color: #ffdb4d; /* Set your desired button hover background color */
+  background-color: #ffdb4d; 
 }

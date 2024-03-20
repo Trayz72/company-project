@@ -129,16 +129,37 @@ const updateProduct = (req, res) => {
 
 const getProductDetailById = (req, res) => {
   const id = req.params.id;
-  const sql = "SELECT ProductName, ProductDescription, ProductPrice, Image FROM products WHERE ProductId = ?";
-  // console.log(id);
+  const sql = `SELECT 
+                  p.ProductId,
+                  p.ProductName,
+                  p.ProductDescription,
+                  p.ProductPrice,
+                  pt.Product_Type_Name,
+                  pw.Product_Weight,
+                  c.Color_Name,
+                  p.Image
+                FROM
+                  products p
+                LEFT JOIN producttype pt ON p.Product_Type_Id = pt.Product_Type_Id
+                LEFT JOIN product_weight pw ON p.Product_Weight_Id = pw.Product_Weight_Id
+                LEFT JOIN color_table c ON p.Color_Id = c.Color_Id
+                where p.ProductId = ?
+  `;
+  
   db.query(sql, [id], (err, data) => {
     if (err) {
-      res.json({ Error: "Error" });
+      res.status(500).json({ Error: "Error" });
     } else {
-      res.json(data);
+      if (data && data.length > 0) {
+        // Set Cache-Control headers to prevent caching
+        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+        res.json(data); 
+      } else {
+        res.status(404).json({ Error: "No product found with the given ID" });
+      }
     }
   });
-}
+};
 
 module.exports = {
   upload,

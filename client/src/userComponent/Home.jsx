@@ -4,6 +4,7 @@ import { NavUser } from "./NavUser";
 import { logContext } from "./Context";
 import { ProductList } from "./ProductList";
 import { ProductDetail } from "./ProductDetail";
+import { CartItem } from "./CartItem";
 
 
 function Home() {
@@ -27,6 +28,7 @@ function Home() {
           <Route path="/" element={<NavUser/>}>
             <Route path="" element={<ProductList userId={userId}/>}></Route>
             <Route path="/productDetail/:id" element={<ProductDetail/>}></Route>
+            <Route path="/cartitem" element={<CartItem/>}></Route>
           </Route>
         </Routes>
       </logContext.Provider>
