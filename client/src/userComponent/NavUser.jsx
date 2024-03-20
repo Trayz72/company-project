@@ -28,6 +28,16 @@ export const NavUser = () => {
               Contact
             </NavLink>
           </li>
+          <li>
+            <NavLink to="serviceForm" className="active">
+              Sevice
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="serviceStatus" className="active">
+              Sevices Status
+            </NavLink>
+          </li>
         </ul>
         <form>
             <button

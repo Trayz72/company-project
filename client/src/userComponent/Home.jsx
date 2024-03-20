@@ -4,7 +4,8 @@ import { NavUser } from "./NavUser";
 import { logContext } from "./Context";
 import { ProductList } from "./ProductList";
 import { ProductDetail } from "./ProductDetail";
-
+import ServiceRequestForm from "./ServiceRequestForm";
+import ServiceStatus from "./ServiceStatus";
 
 function Home() {
   const { id } = useParams();
@@ -27,6 +28,8 @@ function Home() {
           <Route path="/" element={<NavUser/>}>
             <Route path="" element={<ProductList userId={userId}/>}></Route>
             <Route path="/productDetail/:id" element={<ProductDetail/>}></Route>
+            <Route path="/serviceForm" element={<ServiceRequestForm />} />
+          <Route path="/serviceStatus" element={<ServiceStatus />} />
           </Route>
         </Routes>
       </logContext.Provider>

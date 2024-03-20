@@ -48,7 +48,22 @@ export function SideBar({ isActive, toggleSidebar }) {
                 <Link to='/dashboard/color' >colorList</Link>
               </li>
               <li className='sidebar-list-item'>
-                <Link to='/dashboard/products' >productsist</Link>
+                <Link to='/dashboard/products' >productsList</Link>
+              </li>
+              <li className='sidebar-list-item'>
+                <Link to='/dashboard/work' >WorkList</Link>
+              </li>
+              <li className='sidebar-list-item'>
+                <Link to='/dashboard/worker' >WorkerList</Link>
+              </li>
+              <li className='sidebar-list-item'>
+                <Link to='/dashboard/services' >Service</Link>
+              </li>
+              <li className='sidebar-list-item'>
+                <Link to='/dashboard/serviceReqs' >ServiceRequestList</Link>
+              </li>
+              <li className='sidebar-list-item'>
+                <Link to='/dashboard/worker-service-assignments' >Assigned Worker</Link>
               </li>
             </ul>
             }
