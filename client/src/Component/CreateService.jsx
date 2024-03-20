@@ -10,6 +10,8 @@ export const CreateService = () => {
     ProductDimension: "",
     Image: "",
   })
+
+  const {id} = useParams();
   const navigate = useNavigate()
 
   function handleChange(event) {

@@ -5,7 +5,9 @@ import { logContext } from "./Context";
 import { ProductList } from "./ProductList";
 import { ProductDetail } from "./ProductDetail";
 import { CartItem } from "./CartItem";
-
+import { ServiceList } from "./ServiceList";
+import { ServiceDetail } from "./ServiceDetail";
+import { ServiceCart } from "./ServiceCart";
 
 function Home() {
   const { id } = useParams();
@@ -29,6 +31,9 @@ function Home() {
             <Route path="" element={<ProductList userId={userId}/>}></Route>
             <Route path="/productDetail/:id" element={<ProductDetail/>}></Route>
             <Route path="/cartitem" element={<CartItem/>}></Route>
+            <Route path="/serviceList" element={<ServiceList userId={userId}/>}></Route>
+            <Route path="/serviceDetail/:id" element={<ServiceDetail/>}></Route>
+            <Route path="/servicecart" element={<ServiceCart/>}></Route>
           </Route>
         </Routes>
       </logContext.Provider>

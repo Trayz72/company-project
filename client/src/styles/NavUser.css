@@ -71,3 +71,30 @@
 .logout-btn:hover {
   background-color: #ffdb4d; 
 }
+
+/* dropdown service */
+.service-dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  padding: 10px;
+  width: 120px;
+  display: none;
+  position: absolute;
+  top: 17px;
+  left: 0;
+  background-color: #030303;
+  /* border: 1px solid #ccc; */
+}
+
+/* .dropdown-item {
+  color: black;
+} */
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.service-dropdown:hover .dropdown-menu {
+  display: block;
+}

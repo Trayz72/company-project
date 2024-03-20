@@ -14,6 +14,7 @@ const adminLoginController = require('./controllers/adminLoginController');
 // const { upload } = require('./controllers/productController');
 const userController = require('./controllers/userController');
 const cartItemController = require('./controllers/cartItemController');
+const serviceCartController = require('./controllers/serviceCartController')
 
 const app = express();
 app.use(express.json());
@@ -112,6 +113,11 @@ app.delete('/deleteCartItem/:id', cartItemController.deleteCartItem);
 app.get('/getAllCartItemQuantity', cartItemController.getAllCartItemQuantity);
 app.get('/getSumOfProductPrice', cartItemController.getSumOfProductPrice)
 
+//serviceCart table route
+app.post('/createServiceCart', serviceCartController.createServiceCart)
+app.get('/getAllServiceCart', serviceCartController.getAllServiceCart)
+app.get('/getSumOfTotalPrice', serviceCartController.getSumOfTotalPrice)
+app.delete('/deleteServiceCart/:id', serviceCartController.deleteServiceCart)
 
 app.listen(3030, () => {
   console.log("Running");

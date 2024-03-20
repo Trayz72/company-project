@@ -37,6 +37,23 @@ export const NavUser = () => {
               Contact
             </NavLink>
           </li>
+          <li className='service-dropdown'>
+            <NavLink to={`/home/${userId}/serviceList`} className="active">
+              Services
+            </NavLink>
+            <ul className="dropdown-menu">
+              <li>
+                <NavLink to={`/home/${userId}/serviceList`} className="dropdown-item">
+                  All Services
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={`/home/${userId}/serviceCart`} className="dropdown-item">
+                  Service Cart
+                </NavLink>
+              </li>
+            </ul>
+          </li>
         </ul>
         <div className='cart-btns'>
           <div className='cart-container'>
