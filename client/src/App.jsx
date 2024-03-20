@@ -26,6 +26,9 @@ import { ColorUpdate } from "./Component/ColorUpdate"
 import { CreateProducts } from "./Component/CreateProducts"
 import { Products } from "./Component/Products"
 import { ProductsUpdate } from "./Component/ProductsUpdate"
+import { CreateService } from "./Component/CreateService"
+import { Service } from "./Component/Service"
+import { ServiceUpdate } from "./Component/ServiceUpdate"
 import { NavBar } from "./Component/NavBar"
 import { AdminLogin } from "./Component/AdminLogin"
 import UserRegistration from "./userComponent/UserRegistration"
@@ -79,6 +82,10 @@ function App() {
             <Route path="/dashboard/createProducts" element={<CreateProducts/>}></Route>
             <Route path="/dashboard/products" element={<Products/>}></Route>
             <Route path="/dashboard/productUpdate/:id" element={<ProductsUpdate/>}></Route>
+
+            <Route path="/dashboard/createService" element={<CreateService/>}></Route>
+            <Route path="/dashboard/service" element={<Service/>}></Route>
+            <Route path="/dashboard/serviceupdate/:id" element={<ServiceUpdate/>}></Route>
           </Route>
           <Route path="/userRegistration" element={<UserRegistration/>}></Route>
           <Route path="/userLogin" element={<UserLogin/>}></Route>

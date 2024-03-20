@@ -9,10 +9,11 @@ const pCategoryController = require('./controllers/pCategoryController');
 const pWeightController = require('./controllers/pWeightController');
 const colorController = require('./controllers/colorController');
 const {upload,createProduct,getAllProduct,deleteProduct,getProductById,updateProduct,getProductDetailById} = require('./controllers/productController');
-const adminLoginController = require('./controllers/adminLoginController')
+const {uploadService, createService, getAllServices, deleteService,getServiceById, updateService} = require('./controllers/serviceController');
+const adminLoginController = require('./controllers/adminLoginController');
 // const { upload } = require('./controllers/productController');
 const userController = require('./controllers/userController');
-const cartItemController = require('./controllers/cartItemController')
+const cartItemController = require('./controllers/cartItemController');
 
 const app = express();
 app.use(express.json());
@@ -96,6 +97,13 @@ app.put('/updateProduct/:id',upload.single('Image'), updateProduct);
 app.get('/getProductById/:id', getProductById);
 
 app.get('/getProductDetailById/:id', getProductDetailById)
+
+//service-table route
+app.post('/createService', uploadService.single('Image'), createService)
+app.get('/getAllServices', getAllServices)
+app.delete('/deleteService/:id', deleteService)
+app.get('/getServiceById/:id', getServiceById)
+app.put('/updateService/:id', uploadService.single('Image'), updateService)
 
 //cartItem-table route
 app.post('/createCartItem', cartItemController.createCartItem);

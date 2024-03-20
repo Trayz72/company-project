@@ -48,7 +48,10 @@ export function SideBar({ isActive, toggleSidebar }) {
                 <Link to='/dashboard/color' >colorList</Link>
               </li>
               <li className='sidebar-list-item'>
-                <Link to='/dashboard/products' >productsist</Link>
+                <Link to='/dashboard/products' >productLsist</Link>
+              </li>
+              <li className='sidebar-list-item'>
+                <Link to='/dashboard/service' >serviceLsist</Link>
               </li>
             </ul>
             }
