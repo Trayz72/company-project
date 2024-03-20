@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from 'axios'
-import {useNavigate} from "react-router-dom"
+import {useNavigate, Link} from "react-router-dom"
 
 
 export const UserLogin = () => {
@@ -39,7 +39,7 @@ export const UserLogin = () => {
   
   return (
     <div className="form-container">
-      <div>{error && error}</div>
+      <div style={{color: "red"}}>{error && error}</div>
       <h2>user Login</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="userName">user name</label>
@@ -57,6 +57,12 @@ export const UserLogin = () => {
          onChange={handleChange}
         />
         <button className="submit-btn">Log In</button>
+        <div style={{marginTop: '10px'}}>
+          <p>
+            Do not have an account? 
+            <Link to='/userRegistration'>Sign up</Link>
+          </p>
+        </div>
       </form>
     </div>
   )

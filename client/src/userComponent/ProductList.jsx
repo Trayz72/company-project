@@ -16,18 +16,21 @@ export const ProductList = ({userId}) => {
 
 
   return (
-    <div>
-      {data.map((item, index) => 
-        <div key={index} className="product-listcontainer">
-          <img 
-            src={`http://localhost:3030/images/${item.Image}`} alt="" 
-            style={{width:"200px", height:"150px"}}
-            className="product-image"
-          />
-          <h4 className="product-name" >{item.ProductName}</h4>
-          <Link to={`/home/${userId}/productDetail/${item.ProductId}`} className="view-product-link">View product</Link>
-        </div>
-      )}
+    <div className='container'>
+      <h2>Our Products</h2>
+      <div className='container-list'>
+        {data.map((item, index) => 
+          <div key={index} className="product-listcontainer">
+            <img 
+              src={`http://localhost:3030/images/${item.Image}`} alt="" 
+              style={{width:"200px", height:"150px"}}
+              className="product-image"
+            />
+            <h4 className="product-name" >{item.ProductName}</h4>
+            <Link to={`/home/${userId}/productDetail/${item.ProductId}`} className="view-product-link">View product</Link>
+          </div>
+        )}
+      </div>
     </div>
   )
 }

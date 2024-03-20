@@ -23,7 +23,7 @@ export const NavUser = () => {
         <h2 className='logo'>Maruti Fiber</h2>
         <ul className="nav-links">
         <li>
-            <NavLink to="/"  className="active">
+            <NavLink to={`/home/${userId}`}  className="active">
               Home
             </NavLink>
           </li>

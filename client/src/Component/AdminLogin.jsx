@@ -39,7 +39,7 @@ export const AdminLogin = () => {
   
   return (
     <div className="form-container">
-      <div>{error && error}</div>
+      <div style={{color: "red"}}>{error && error}</div>
       <h2>Admin Login</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="adminName">Admin name</label>

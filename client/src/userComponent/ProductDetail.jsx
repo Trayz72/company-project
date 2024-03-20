@@ -75,28 +75,33 @@ export const ProductDetail = () => {
     console.log(data)
   }
 
-  
   return (
-    <div className='product-container'>
-      <div className='product-image'>
-        <img
-          src={`http://localhost:3030/images/${values.Image}`}
-          alt={values.ProductName}
-        />
-      </div>
-      <div className='product-details'>
-        <h3 className='product-name'>{values.ProductName}</h3>
-        <p className='product-description'>{values.ProductDescription}</p>
-        <p className='product-info'>Product-Type: {values.Product_Type_Name}</p>
-        <p className='product-info'>Weight: {values.Product_Weight}</p>
-        <p className='product-info'>Color: {values.Color_Name}</p>
-        <p className='product-price'>Price: {values.ProductPrice}</p>
-        <form onSubmit={handleSubmit} className="quantity-form">
-          <button className='quantity-btn' onClick={handleSubQuantity}>-</button>
-          <input type="text" className='quantity-input' value={data.quantity} readOnly/>
-          <button className='quantity-btn' onClick={handleAddQuantity}>+</button>
-          <button>Add To Cart</button>
-        </form>
+    <div className='product-parent'>
+      <div className='product-container'>
+        <div className='product-image'>
+          <img
+            src={`http://localhost:3030/images/${values.Image}`}
+            alt={values.ProductName}
+          />
+        </div>
+        <div className='product-details'>
+          <h3 className='product-name'>{values.ProductName}</h3>
+          <p className='product-description'>{values.ProductDescription}</p>
+          <p className='product-info'>Product-Type: {values.Product_Type_Name}</p>
+          <p className='product-info'>Weight: {values.Product_Weight}</p>
+          <p className='product-info'>Color: {values.Color_Name}</p>
+          <p className='product-price'>Price: {values.ProductPrice}</p>
+          <form onSubmit={handleSubmit} className="quantity-form">
+            <div className='quantity-container'>
+              <button className='quantity-btn' onClick={handleSubQuantity}>-</button>
+              <input type="text" className='quantity-input' value={data.quantity} readOnly/>
+              <button className='quantity-btn' onClick={handleAddQuantity}>+</button>
+            </div>
+            <div className='add-cart-container'>
+              <button className='add-to-cart'>Add To Cart</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   )

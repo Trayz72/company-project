@@ -76,11 +76,11 @@ export const CartItem = () => {
           <h3>Cart Total</h3>
           <div className="cart-item">
             <div className='total'>Subtotal</div>
-            <div>{total.totalPrice}</div>
+            <div>₹{total.totalPrice}</div>
           </div>
           <div className="cart-item">
             <div className='total'>total</div>
-            <div>{total.totalPrice}</div>
+            <div>₹{total.totalPrice}</div>
           </div>
           <button className='checkout-button'>Proceed To Checkout</button>
         </div>

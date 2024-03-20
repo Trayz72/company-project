@@ -14,7 +14,7 @@ function Home() {
 
   const logout = () => {
     setUserId(null);
-    navigate("/");
+    navigate("/userLogin");
   };
 
   useEffect(() => {
