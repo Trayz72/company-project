@@ -1,6 +1,6 @@
 import {useState} from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 export const CreateService = () => {
   const [values, setValues] = useState({
@@ -11,7 +11,7 @@ export const CreateService = () => {
     Image: "",
   })
 
-  const {id} = useParams();
+  // const {id} = useParams();
   const navigate = useNavigate()
 
   function handleChange(event) {

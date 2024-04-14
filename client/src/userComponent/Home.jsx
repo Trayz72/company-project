@@ -8,6 +8,7 @@ import { CartItem } from "./CartItem";
 import { ServiceList } from "./ServiceList";
 import { ServiceDetail } from "./ServiceDetail";
 import { ServiceCart } from "./ServiceCart";
+import CheckoutPayment from "./CheckoutPayment";
 
 function Home() {
   const { id } = useParams();
@@ -34,6 +35,7 @@ function Home() {
             <Route path="/serviceList" element={<ServiceList userId={userId}/>}></Route>
             <Route path="/serviceDetail/:id" element={<ServiceDetail/>}></Route>
             <Route path="/servicecart" element={<ServiceCart/>}></Route>
+            <Route path="/checkoutPayment" element={<CheckoutPayment userId={userId}/>}></Route>
           </Route>
         </Routes>
       </logContext.Provider>

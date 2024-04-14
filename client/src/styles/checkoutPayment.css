@@ -1,0 +1,56 @@
+.payment-form {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.half-width {
+  width: 48%;
+  display: inline-block;
+  margin-right: 2%;
+}
+
+.third-width {
+  width: 30%;
+  display: inline-block;
+  margin-right: 2%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

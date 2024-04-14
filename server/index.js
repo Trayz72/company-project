@@ -16,6 +16,8 @@ const userController = require('./controllers/userController');
 const cartItemController = require('./controllers/cartItemController');
 const serviceCartController = require('./controllers/serviceCartController')
 
+const checkoutController = require('./controllers/checkoutController')
+
 const app = express();
 app.use(express.json());
 app.use(cors({
@@ -118,6 +120,9 @@ app.post('/createServiceCart', serviceCartController.createServiceCart)
 app.get('/getAllServiceCart', serviceCartController.getAllServiceCart)
 app.get('/getSumOfTotalPrice', serviceCartController.getSumOfTotalPrice)
 app.delete('/deleteServiceCart/:id', serviceCartController.deleteServiceCart)
+
+//checkoutPayment
+app.post('/createCheckoutPayment', checkoutController.createCheckoutPayment)
 
 app.listen(3030, () => {
   console.log("Running");

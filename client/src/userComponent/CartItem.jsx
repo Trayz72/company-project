@@ -1,6 +1,6 @@
 import {useState, useEffect, useContext} from 'react';
 import { logContext } from "./Context";
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import '../styles/CartItem.css';
 
@@ -9,6 +9,7 @@ export const CartItem = () => {
   const [total, setTotal] = useState([]);
   const { userId } = useContext(logContext);
 
+  const navigate = useNavigate();
   useEffect(()=> {
     axios
       .get("http://localhost:3030/getAllCartItem")
@@ -82,7 +83,7 @@ export const CartItem = () => {
             <div className='total'>total</div>
             <div>₹{total.totalPrice}</div>
           </div>
-          <button className='checkout-button'>Proceed To Checkout</button>
+          <button className='checkout-button' onClick={() => navigate(`/home/${userId}/checkoutPayment`)}>Proceed To Checkout</button>
         </div>
       </div>
       
