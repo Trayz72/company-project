@@ -44,3 +44,14 @@ exports.userLogin = (req, res) => {
     }
   });
 }
+
+exports.getAllCustomer = (req, res) => {
+  const sql = "SELECT * FROM User_Account";
+  db.query(sql, (err, data) => {
+    if (err) {
+      console.error(err); 
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    return res.json(data);
+  });
+};

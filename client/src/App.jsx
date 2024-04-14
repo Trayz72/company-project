@@ -34,7 +34,8 @@ import { AdminLogin } from "./Component/AdminLogin"
 import UserRegistration from "./userComponent/UserRegistration"
 import { UserLogin } from "./userComponent/UserLogin"
 import Home from "./userComponent/Home"
-
+import Customerrpt from "./Component/Customerrpt"
+import { Productrpt } from "./Component/Productrpt"
 function App() {
 
   return (
@@ -86,6 +87,9 @@ function App() {
             <Route path="/dashboard/createService" element={<CreateService/>}></Route>
             <Route path="/dashboard/service" element={<Service/>}></Route>
             <Route path="/dashboard/serviceupdate/:id" element={<ServiceUpdate/>}></Route>
+
+            <Route path="/dashboard/customerreport" element={<Customerrpt/>}></Route>
+            <Route path="/dashboard/productreport" element={<Productrpt/>}></Route>
           </Route>
           <Route path="/userRegistration" element={<UserRegistration/>}></Route>
           <Route path="/userLogin" element={<UserLogin/>}></Route>

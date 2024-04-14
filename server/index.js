@@ -40,6 +40,7 @@ app.post('/adminLogin', adminLoginController.adminLogin);
 //user
 app.post('/userRegister', userController.userRegister);
 app.post('/userLogin', userController.userLogin);
+app.get('/getAllCustomer', userController.getAllCustomer)
 
 // state-route
 app.get('/states', stateController.getAllStates);
